@@ -4,57 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>지큐양복점 - 갤러리 게시판</title>
-    <link rel="stylesheet" href="/css/slick.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- 메인에는 main.css / 서브에는 sub.scc만 -->
-    <link rel="stylesheet" href="/css/sub.css">
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/reset.css">    
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.6/css/swiper.min.css">
-    <script src="/js/jquery-1.12.4.min.js"></script>
-    <script src="/js/slick.min.js"></script>
-    <script src="/js/gnb.js"></script>
-    <script src="http://gunpo.tium.co.kr/gb/js/modernizr.custom.70111.js"></script>
-    <script src="http://gunpo.tium.co.kr/gb/js/jquery-migrate-1.4.1.min.js?ver=191202"></script>
-    <script src="http://gunpo.tium.co.kr/gb/js/swiper.min.js?ver=191202"></script> 
-    <script src="http://gunpo.tium.co.kr/gb/js/slick.min.js?ver=191202"></script>
-    <script src="/js/mainjs.js"></script>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/gnb.js"></script>
+    <script src="../js/modernizr.custom.70111.js"></script>
+    <script src="../js/jquery-migrate-1.4.1.min.js?ver=191202"></script>
+    <script src="../js/swiper.min.js?ver=191202"></script> 
+    <script src="../js/slick.min.js?ver=191202"></script>
 </head>
 <body>
     <div id="gq_wrap">
-        <!-- 서브페이지와 메인 헤더 다름-->
         <header id="header" class="sub_header">
             <div class="inner">                    
                 <h1 class="logo">
-                    <a href="/">
-                        <img src="/img/sub_logo.png" alt="logo">
+                    <a href="../index.html">
+                        <img src="../img/sub_logo.png" alt="logo">
                     </a>
                 </h1>
                 <nav id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="yg_jalnan fo_f">
-                            <a href="/">
+                            <a href="../sub/greetings.html">
                                 지큐양복
-                            </a>                               
+                            </a>                
+                            <ul class="sub_menu fo_f">
+                                <li><a href="../sub/greetings.html">인사말</a></li>
+                                <li><a href="../sub/store.html">매장전경</a></li>
+                                <li><a href="../sub/location.html">오시는 길</a></li>
+                            </ul>
                         </li>
                         <li class="yg_jalnan fo_f">
-                            <a href="/">
+                            <a href="../sub/history.html">
                                 대표 약력                
                             </a>                               
                         </li>
                         <li class="yg_jalnan fo_f">
-                            <a href="/">
+                            <a href="../sub/gallery.html">
                                 작품 갤러리                        
                             </a>                                
                         </li>
                         <li class="yg_jalnan fo_f">
-                            <a href="/">
+                            <a href="../sub/notice.html">
                                 고객지원
                             </a>                                                    
                         </li>                                   
                     </ul>                                                                      
-                </nav>      
-                
+                </nav>                     
             </div>
             <div class="hamBtn">
                 <a href="#!" class="">
@@ -67,15 +68,14 @@
                 <div class="aside_bg"></div>
                 <div id="lnb" class="navbar-nav_m full-menu">
                     <ul>
-                        <li class="yg_jalnan fo_f"><a href="">지큐 양복 <i></i></a></li>                      
-                        <li class="yg_jalnan fo_f"><a href="">대표 약력 <i></i></a></li>
-                        <li class="yg_jalnan fo_f"><a href="">작품 갤러리  </a></li>
-                        <li class="yg_jalnan fo_f"><a href="">고객지원 </a></li>                                      
+                        <li class="yg_jalnan fo_f"><a href="../sub/greetings.html">지큐 양복 <i></i></a></li>                      
+                        <li class="yg_jalnan fo_f"><a href="../sub/history.html">대표 약력 <i></i></a></li>
+                        <li class="yg_jalnan fo_f"><a href="../sub/gallery.html">작품 갤러리  </a></li>
+                        <li class="yg_jalnan fo_f"><a href="../sub/notice.html">고객지원 </a></li>                                      
                     </ul>
                 </div>          
             </aside>  
         </header>
-        <!-- 서브와 메인 각각 다르게 id 값이 달라요 -->
         <main id="sub_contentArea">
             <section id="galley_visual" class="section">
                 <h2 class="hidden">서브 비주얼</h2>
@@ -91,8 +91,170 @@
                     <div class="board_title">
                         <h4 class="s_title2 bolder">작품 갤러리</h4>
                     </div>  
-                    <!-- 게시판 리스트 시작 -->
-                    <div class="board_box"></div>                
+                    <div class="board_box">
+                        <div id="bo_list" style="width:100%">   
+                            <form name="fboardlist" id="fboardlist" action="" onsubmit="return fboardlist_submit(this);" method="post">
+                                <input type="hidden" name="bo_table" value="gallery">
+                                <input type="hidden" name="sfl" value="">
+                                <input type="hidden" name="stx" value="">
+                                <input type="hidden" name="spt" value="">
+                                <input type="hidden" name="sca" value="">
+                                <input type="hidden" name="sst" value="wr_num, wr_reply">
+                                <input type="hidden" name="sod" value="">
+                                <input type="hidden" name="page" value="1">
+                                <input type="hidden" name="sw" value="">
+                        
+                                <div class="bo-top-wrap">
+                                    <div class="list-total">Total <strong class="mr5">6</strong> <span class="total-page">[ <strong>1</strong> / 1 Page]</span></div>
+                                    <div class="board-btn btn-text-none">
+                                        <a href="#" id="btn-search" class="btn-bo-search" title="게시판 검색">검색</a>
+                                    </div>
+                                </div>
+                                <ul class="gallery-list">
+                                    <li>
+                                        <a href="#!">
+                                            <span class="gallery-list-img"><img src="../img/thumb-bc4b61993f31cce14278a6b8606c0b38_WIo3zBXK_d0fe5df224941f3291e4f10fc51e36214b2a9162_491x363.jpg" alt="" class="gallery-img-content"></span>
+                                            <span class="gallery-list-content">
+                                                <span class="gallery-list-category"></span>
+                                                <span class="gallery-list-title">모던 핏 정장</span>
+                                                <span class="gallery-list-content-etc">
+                                                    <span class="list-writer"><span class="sv_member">최고관리자</span></span>
+                                                    <span class="list-date">2023.11.10</span>
+                                                    <span class="list-comment">0</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">
+                                            <span class="gallery-list-img"><img src="../img/thumb-bc4b61993f31cce14278a6b8606c0b38_Hor5Yukl_cda88db6c1edc895b4fa0ffac21b1c1453d44f32_491x363.jpg" alt="" class="gallery-img-content"></span>
+                                            <span class="gallery-list-content">
+                                                <span class="gallery-list-category"></span>
+                                                <span class="gallery-list-title">클래식 정장 P</span>
+                                                    <span class="gallery-list-content-etc">
+                                                    <span class="list-writer"><span class="sv_member">최고관리자</span></span>
+                                                    <span class="list-date">2023.11.10</span>
+                                                    <span class="list-comment">0</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">
+                                            <span class="gallery-list-img"><img src="../img/thumb-bc4b61993f31cce14278a6b8606c0b38_Mdt6TnJb_69ca00763bcd55827491737c4bdff3d195620da7_491x363.jpg" alt="" class="gallery-img-content"></span>
+                                            <span class="gallery-list-content">
+                                                <span class="gallery-list-category"></span>
+                                                <span class="gallery-list-title">클래식 브라운 체크 정장</span>
+                                                <span class="gallery-list-content-etc">
+                                                    <span class="list-writer"><span class="sv_member">최고관리자</span></span>
+                                                    <span class="list-date">2023.11.10</span>
+                                                    <span class="list-comment">0</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">
+                                            <span class="gallery-list-img"><img src="../img/thumb-bc4b61993f31cce14278a6b8606c0b38_7MurWgaO_9e784b29f51afdcde6b884352fe6a2d61bbde5df_491x363.jpg" alt="" class="gallery-img-content"></span>
+                                            <span class="gallery-list-content">
+                                                <span class="gallery-list-category"></span>
+                                                <span class="gallery-list-title">클래식 체크 정장</span>
+                                                <span class="gallery-list-content-etc">
+                                                    <span class="list-writer"><span class="sv_member">최고관리자</span></span>
+                                                    <span class="list-date">2023.11.10</span>
+                                                    <span class="list-comment">0</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">
+                                            <span class="gallery-list-img"><img src="../img/thumb-bc4b61993f31cce14278a6b8606c0b38_IPi4xDlB_11ae5edf537406c8f2060089e038c1296c6bb4da_491x363.jpg" alt="" class="gallery-img-content"></span>
+                                            <span class="gallery-list-content">
+                                                <span class="gallery-list-category"></span>
+                                                <span class="gallery-list-title">하이엔드 클래식 정장</span>
+                                                <span class="gallery-list-content-etc">
+                                                    <span class="list-writer"><span class="sv_member">최고관리자</span></span>
+                                                    <span class="list-date">2023.11.10</span>
+                                                    <span class="list-comment">0</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!">
+                                            <span class="gallery-list-img"><img src="../img/thumb-bc4b61993f31cce14278a6b8606c0b38_Hfr3EKuv_56b44e28d47892b6e4772a2c3b5b2ad57ef99238_491x363.jpg" alt="" class="gallery-img-content"></span>
+                                            <span class="gallery-list-content">
+                                                <span class="gallery-list-category"></span>
+                                                <span class="gallery-list-title">이탈리안 클래식 울 P정장</span>
+                                                <span class="gallery-list-content-etc">
+                                                    <span class="list-writer"><span class="sv_member">최고관리자</span></span>
+                                                    <span class="list-date">2023.11.10</span>
+                                                    <span class="list-comment">0</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="bo-bottom-wrap">
+                                    <div class="board-btn list-bottom-left">
+                                    </div>
+                                    <div class="board-btn list-bottom-right btn-text-none">
+                                    </div>
+                                </div>
+                        	</form>
+                        	<div class="bo-sch-wrap">
+                        		<div class="bo-sch-content">
+                        		<fieldset class="bo-sch">
+                        			<h3>Search</h3>
+                        			<form name="fsearch" method="get">
+                        				<input type="hidden" name="bo_table" value="gallery">
+                        				<input type="hidden" name="sca" value="">
+                        				<input type="hidden" name="sop" value="and">
+                        				<div class="bo-sch-box">
+                        					<div class="bo-sch-inner">
+                        						<div class="bo-sch-input">
+                        							<label for="sfl" class="sound_only">검색대상</label>
+                        							<select name="sfl" id="sfl"><option value="wr_subject" >제목</option><option value="wr_content" >내용</option><option value="wr_subject||wr_content" >제목+내용</option><option value="wr_name,1" >글쓴이</option><option value="wr_name,0" >글쓴이(코)</option></select>
+                        						</div>
+                        						<div class="bo-sch-input">
+                        							<label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+                        							<input type="text" name="stx" value="" required id="stx" placeholder=" 검색어를 입력해주세요">
+                        						</div>
+                        						<div class="bo-sch-btn">
+                        							<button type="submit" value="검색" class="sch-btn">검색</button>
+                        						</div>
+                        					</div>
+                        				</div>
+                        			</form>
+                        		</fieldset>
+                        		<button type="button" class="bo-sch-cls" title="닫기">닫기</button>
+                        		<div class="bo-sch-bg"></div>
+                        		</div>
+                        	</div>
+                            <script>
+                            jQuery(function($){
+                                // 게시판 검색
+                                $("#btn-search").on("click", function() {
+                                    $(".bo-sch-wrap").stop().fadeIn("fast", function(){
+                        				$(this).addClass('active');
+                        			});
+                        			return false;
+                                })
+                                $('.bo-sch-bg, .bo-sch-cls').click(function(){
+                                    $('.bo-sch-wrap').stop().removeClass('active').fadeOut('fast');
+                        
+                                });
+                            });
+                            </script>
+                        </div>
+                        
+                        
+                        <style>
+                        .gallery-list .gallery-list-img{padding-top: 74%;}
+                        </style>
+
+                    </div>                
                 </article>  
             </section>
         </main>
