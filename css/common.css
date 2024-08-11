@@ -311,7 +311,7 @@ body.menu--open #header .inner .logo .block {
 #footer .b_area .center > ul a i:after {
   content: "";
   display: block;
-  background: url("/img/arrow_prev.png") no-repeat center/14px 8px;
+  background: url("../img/arrow_prev.png") no-repeat center/14px 8px;
   position: absolute;
   top: 0;
   right: 0;
