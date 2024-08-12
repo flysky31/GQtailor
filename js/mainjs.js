@@ -25,6 +25,7 @@ $(document).ready(function() {
         },
     });
         
+
     //fraction 
     var pagingSwiper = new Swiper(".main_slide", {
         effect:"fade",
