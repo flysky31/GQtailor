@@ -83,8 +83,8 @@
 .bo-sch-wrap.active .bo-sch-cls{opacity: 1;transform:translateX(0px);transition:all 0.4s ease-out;}
 .bo-sch-wrap.active h3{opacity: 1;transform:translateY(0px);transition:all 0.4s ease-out;}
 .bo-sch-wrap.active .bo-sch-box{opacity: 1;transform:translateY(0px);transition:all 0.4s ease-out 0.15s;}
-
-
+.msg_sound_only, .sound_only{    display: inline-block;position: absolute;top: 0;left: 0; margin: 0 !important;padding: 0 !important;
+    width: 1px !important; height: 1px !important;font-size: 0 !important;line-height: 0 !important; overflow: hidden;}
 
 	.bo-top-wrap{display: flex;justify-content:space-between;align-items:flex-end;margin-bottom: 20px;}
 	.list-total{font-size: 16px;font-weight: 300;background: url(../img/grid_small.svg) 0 center no-repeat;padding-left: 30px;min-height:24px;line-height: 24px;	background-size: 24px auto;}
