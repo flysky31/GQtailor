@@ -62,7 +62,7 @@
 
 .bo-sch-wrap {display:none;width:100%;height:100%;position:fixed;top:0;left:0;z-index:999;}
 .bo-sch-content{width: 100%;height: 100%;align-items:center; justify-content:center; flex-wrap:wrap; align-content:center;display: flex;}
-.bo-sch {position: relative;z-index: 2;text-align:left;}
+.bo-sch {position: relative;z-index: 2;text-align:left;border:0;}
 .bo-sch h3{font-size: 50px;color:#fff;text-align: center;font-weight: 600;margin-bottom: 30px;opacity: 0;transform:translateY(-30px);text-shadow:5px 5px 10px rgba(0, 0, 0, .8);}
 .bo-sch legend{}
 .bo-sch-box{background: rgba(74,74,74,.9);border-radius: 10px;padding: 20px;box-shadow:10px 10px 20px 0 rgba(0, 0, 0, .4);width: 380px;opacity: 0;transform:translateY(-30px);}
